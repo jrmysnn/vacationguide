@@ -1,0 +1,150 @@
+<html>
+	<head>
+	<title></title>
+	<style>
+		.time-table {
+			border-collapse:collapse;
+			width:100%;
+			cursor:pointer;
+		}
+		.time-table td {
+			border: 1px solid black; text-align:right;
+		}
+		.time-table tr:hover {
+			background-color:blue;
+			color:white !important;
+		}
+		
+		.time-table .selectedRow {
+			background-color:blue;
+			color:white;
+		}
+		.map-image {
+			
+		}
+		.contentHidden {
+			display:none;
+		}
+	</style>
+	</head>
+	
+	<body>
+		 <div style="width: 100%; overflow: hidden;">
+			 <div style="width: 180  !important; float: left;border:1px solid black;"> 
+				<table class="time-table">
+					<tr class="rows" onclick="selectRow(1)" id="row1">
+						<td style="padding:2px;"> Departure </td> <td> 1:00 AM </td>
+					</tr>
+					<tr class="rows" onclick="selectRow(2)" id="row2">
+						<td> Breakfast </td> <td> 5:00 AM </td>
+					</tr>
+					<tr class="rows" onclick="selectRow(3)" id="row3">
+						<td> Arrival </td> <td> 6:00 - 7:00 AM </td>
+					</tr>
+					<tr class="rows"  id="row4" style="text-align:center !important;">
+						<td colspan="2" style="text-align:center !important;"> Options - 7:00 AM to 10:00 AM </td> 
+					</tr>
+					<tr class="rows" onclick="selectRow(5)" id="row5">
+						<td> <b>Option 1</b> : Burnham Park </td> <td> 6:00 - 7:00 AM </td>
+					</tr>
+					<tr class="rows" onclick="selectRow(6)" id="row6">
+						<td> <b>Option 2</b> : Mirado Hill </td> <td> 6:00 - 7:00 AM </td>
+					</tr>
+				</table>
+			 </div>
+			 <div style="margin-left: 180px;border:1px solid black"> 	
+				<table>
+					<tr id="content-1" class="contentHidden contentRow">
+						<td>
+						<img class="map-image" src="img/cubaotobaguio.png"/>
+						</td>
+						<td>
+							<ul>
+								<li> <b>Ticket:</b> 850 php (per person) </li>
+								<li> <b>Ticket Total:</b> 1700 php (for two) </li>
+								<li> <b>Travel Time:</b> 5 to 6 Hours </li>
+								<li> <b>Bus Specification:</b> 
+									<ul>
+										<li>Joy Bus</li>
+										<li>Executive</li>
+										<li>Small TV on seat</li>
+										<li>Warm Blanket</li>
+										<li>Free water and biscuits</li>
+										<li>Restroom</li>
+										
+									</ul>
+									<img src="img/joybus1.png" style="width:100%;"/>
+								</li>
+							</ul>
+						</td>
+					</tr>
+					<tr id="content-3" class="contentHidden contentRow">
+						<td width="75%">
+						<img class="map-image" src="img/baguiojoybus.png" width="100%"/>
+						</td>
+						<td>
+							Will arrive at genesis joy bus terminal in baguio
+							<br/>
+							Near landmark:
+							<ul>
+								<li> Burnham Park</li>
+								<li> SM City Baguio </li>
+								<li> Session Road </li>
+								<li> Baguio Market (Night Market)</li>
+							</ul>
+						</td>
+					</tr>
+					<tr id="content-5" class="contentHidden contentRow">
+						<td width="75%">
+						<img class="map-image" src="img/burnhampark.png" width="100%"/>
+						</td>
+						<td>
+							Free Entrance
+							<hr/>
+
+							Activities:
+							<ul>
+								<li> <b>Boar:</b> 100 Php per 30 Minutes (Good for 5 Persons)</li>
+								<li> <b>Go Cart:</b> 50 Php per 35 Minutes (Per person)</li>
+								<li> <b>Foodtrip:</b>  200 Php ?</li>
+								<li> <b>Total of </b> 400 php (per person)</li>
+							</ul>
+						</td>
+					</tr>
+					<tr id="content-6" class="contentHidden contentRow">
+						<td width="75%">
+						<img class="map-image" src="img/miradohill.png" width="100%"/>
+						</td>
+						<td>
+							100 Php Entrance Fee Total of 200 Php
+
+						</td>
+					</tr>
+				</table>
+			 </div>
+			
+		</div>
+		
+		<script type="text/javascript">
+			function selectRow(row){
+				var elems = document.querySelectorAll(".rows");
+				[].forEach.call(elems, function(el) {
+					el.classList.remove("selectedRow");
+				});
+			
+				let selectedRow = document.getElementById("row"+row);
+				selectedRow.classList.add("selectedRow");
+				
+					
+				var contentRow = document.querySelectorAll(".contentRow");
+				[].forEach.call(contentRow, function(el2) {
+					if (el2!=null){
+					el2.classList.remove("contentHidden");
+					el2.classList.add("contentHidden");
+					}
+				});
+				document.getElementById("content-"+row).classList.remove("contentHidden");
+			}
+		</script>
+	</body>
+</html>
