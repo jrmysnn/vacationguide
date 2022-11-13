@@ -6,9 +6,10 @@
 			border-collapse:collapse;
 			width:100%;
 			cursor:pointer;
+			background-color:grey;
 		}
 		.time-table td {
-			border: 1px solid black; text-align:right;padding:2px;
+			border: 1px solid black; text-align:right;padding:2px;font-size:24pt !important;
 		}
 		.time-table tr:hover {
 			background-color:blue;
@@ -111,7 +112,8 @@
 				</table>
 			 </div>
 			
-			 <div style="width:100%;"> 
+			 <div style="width:100%; position: fixed; 
+    bottom:0%;"> 
 				<table class="time-table">
 					<tr class="rows" onclick="selectRow(1)" id="row1">
 						<td style="padding:2px;"> Departure </td> <td> 1:00 AM </td>
